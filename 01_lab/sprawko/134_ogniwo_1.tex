@@ -13,6 +13,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{here}
+\usepackage{tabto}
 
 \setlength{\textheight}{24cm}
 \setlength{\textwidth}{15.92cm}
@@ -194,29 +195,29 @@ I {[}$mA${]} & U {[}$V${]} & P  {[}$mW${]} & U/N {[}$V${]} & I/S {[}$A/m^2${]} \
     y dir=both,y explicit,
     ]
     coordinates {
-    (0.33,	0.16) +- ()
-	(0.33,	0.22) +- ()
-	(0.33,	0.26) +- ()
-	(0.32,	0.77) +- ()
-	(0.31,	1.28) +- ()
-	(0.30,	1.83) +- ()
-	(0.29,	2.09) +- ()
-	(0.29,	2.37) +- ()
-	(0.28,	2.56) +- ()
-	(0.27,	2.87) +- ()
-	(0.27,	3.12) +- ()
-	(0.26,	3.45) +- ()
-	(0.25,	3.83) +- ()
-	(0.24,	4.13) +- ()
-	(0.24,	4.32) +- ()
-	(0.23,	4.60) +- ()
-	(0.22,	4.55) +- ()
-	(0.19,	4.96) +- ()
-	(0.17,	5.22) +- ()
-	(0.14,	5.45) +- ()
-	(0.10,	5.65) +- ()
-	(0.08,	5.78) +- ()
-	(0.07,	6.01) +- ()
+    (0.33,	0.16) +- (1,1)
+	(0.33,	0.22) +- (1,1)
+	(0.33,	0.26) +- (1,1)
+	(0.32,	0.77) +- (1,1)
+	(0.31,	1.28) +- (1,1)
+	(0.30,	1.83) +- (1,1)
+	(0.29,	2.09) +- (1,1)
+	(0.29,	2.37) +- (1,1)
+	(0.28,	2.56) +- (1,1)
+	(0.27,	2.87) +- (1,1)
+	(0.27,	3.12) +- (1,1)
+	(0.26,	3.45) +- (1,1)
+	(0.25,	3.83) +- (1,1)
+	(0.24,	4.13) +- (1,1)
+	(0.24,	4.32) +- (1,1)
+	(0.23,	4.60) +- (1,1)
+	(0.22,	4.55) +- (1,1)
+	(0.19,	4.96) +- (1,1)
+	(0.17,	5.22) +- (1,1)
+	(0.14,	5.45) +- (1,1)
+	(0.10,	5.65) +- (1,1)
+	(0.08,	5.78) +- (1,1)
+	(0.07,	6.01) +- (1,1)
     };
     \addlegendentry{Polikrystaliczne}
     
@@ -229,15 +230,15 @@ I {[}$mA${]} & U {[}$V${]} & P  {[}$mW${]} & U/N {[}$V${]} & I/S {[}$A/m^2${]} \
     y dir=both,y explicit,
     ]
     coordinates {
-    (0.46, 0.10) +- ()
-	(0.46, 0.16) +- ()
-	(0.46, 0.27) +- ()
-	(0.46, 0.35) +- ()
-	(0.46, 0.57) +- ()
-	(0.45, 0.83) +- ()
-	(0.45, 1.13) +- ()
-	(0.45, 1.68) +- ()
-	(0.44, 2.49) +- ()
+    (0.46, 0.10) +- (1,1)
+	(0.46, 0.16) +- (1,1)
+	(0.46, 0.27) +- (1,1)
+	(0.46, 0.35) +- (1,1)
+	(0.46, 0.57) +- (1,1)
+	(0.45, 0.83) +- (1,1)
+	(0.45, 1.13) +- (1,1)
+	(0.45, 1.68) +- (1,1)
+	(0.44, 2.49) +- (1,1)
     };
     \addlegendentry{Monokrystaliczne}
  
@@ -262,5 +263,20 @@ Tak niska sprawność może wynikać np. z faktu, że ogniwo jest już stare i z
 \end{itemize}
 
 \subsection{Dyskusja błędu}
-Na używanych elektronicznych przyrządach pomiarowych nie naniesiono informacji o niepewności, dlatego niepewności pomiarowe 
+Na używanych elektronicznych przyrządach pomiarowych nie naniesiono informacji o ich dokładności, dlatego niepewności oszacowano z nadmiarem na podstawie obserwacji działania przyrządów w trakcie wykonywania pomiarów (np. porównanie zbliżonych wartości pomiaru na różnych zakresach) i typowych charakterystyk przyrządów pomiarowych danego typu.\\
+Niepewności pomiaru napięcia oraz natężenia prądu, a także natężenia światła obliczono zgodnie z wzorem:
+$$u(x) = \frac{\Delta x}{\sqrt{3}},\ \Delta x = C_1 \times x + C_2 \times \text{zakres}$$
+
+Stałe $C_1$ oraz $C_2$ dobrano jak następuje:
+\begin{itemize}
+\TabPositions{3cm}
+\item amperomierz:\tab$C_1 = 1\%$, $C_2 = 0,5\%$
+\item woltomierz:\tab$C_1 = 1\%$, $C_2 = 0,5\%$
+\item luksomierz:\tab$C_1 = 5\%$, $C_2 = 0,5\%$
+\end{itemize}
+
+Pole powierzchni ogniw $S$ było podane bez żadnej dokładności, w związku z czym za niepewność przyjęto ostatnią cyfrę znaczącą.\\
+Niepewności zamieszczone w tabeli obliczono według następujących wzorów:\\
+
+
 \end{document}
